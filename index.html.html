@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Atanu Jana - Engineering Portfolio & Marketplace</title>
+<meta name="description" content="Engineering portfolio of Atanu Jana featuring IoT, AI-ML, Semiconductor and Embedded Systems solutions. Explore projects and marketplace for innovative technology solutions.">
+<meta name="keywords" content="IoT, AI-ML, Semiconductor and Embedded Systems, engineering portfolio, smart irrigation, microplastic detection, machine learning">
+<meta name="author" content="Atanu Jana">
+
+<!-- Google Fonts: Poppins & Orbitron for technical feel -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+  :root {
+    --primary-dark: #0a1930; /* Deep Navy Blue */
+    --secondary-dark: #1a3658; /* Dark Blue */
+    --accent-blue: #00d4ff; /* Electric Blue */
+    --accent-purple: #8a2be2; /* Circuit Purple */
+    --light-bg: #0f1729; /* Dark Blue Background */
+    --card-bg: #1e293b; /* Card Background */
+    --white: #ffffff;
+    --text-color: #e2e8f0;
+    --light-text: #f0f0f0;
+    --error-color: #ff4d4d;
+    --success-color: #00ff88;
+    --grid-color: rgba(0, 212, 255, 0.1);
+  }
+
+  /* Circuit board background pattern */
+  @keyframes circuitFlow {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+  }
+
+  /* Smooth scroll and base setup */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Circuit board background */
+    background-image: 
+      linear-gradient(var(--grid-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: circuitFlow 20s linear infinite;
+  }
+
+  /* Header Styling with tech glow */
+  header {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+    color: var(--light-text);
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+    animation: headerGlow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes headerGlow {
+    0% { box-shadow: 0 0 10px var(--accent-blue); }
+    100% { box-shadow: 0 0 20px var(--accent-purple); }
+  }
+
+  header h1 {
+    margin: 0 0 10px;
+    font-weight: 700;
+    font-size: 2.8em;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  }
+
+  header p {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-weight: 300;
+  }
+
+  header a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  header a:hover {
+    color: var(--white);
+    text-shadow: 0 0 8px var(--accent-blue);
+  }
+
+  header .contact-info {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  header .contact-info a {
+    display: inline-flex;
+    align-items: center;
+    margin: 5px 15px;
+    font-size: 1em;
+  }
+
+  header .contact-info a i {
+    margin-right: 8px;
+    font-size: 1.2em;
+  }
+
+  /* Navigation Styling - Cyber Style */
+  nav {
+    background: rgba(26, 54, 88, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    padding: 18px 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+  }
+
+  nav a {
+    color: var(--accent-blue);
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 25px;
+    font-size: 1.1em;
+    padding: 12px 25px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+    transition: left 0.5s ease;
+  }
+
+  nav a:hover::before {
+    left: 100%;
+  }
+
+  nav a:hover {
+    color: var(--white);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    background: rgba(0, 212, 255, 0.1);
+  }
+
+  nav a.active {
+    background: rgba(0, 212, 255, 0.2);
+    color: var(--white);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+  }
+
+  /* Main Content Area */
+  main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto 50px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Hero Section with Tech Theme */
+  .hero-section {
+    background: linear-gradient(135deg, rgba(10, 25, 48, 0.9) 0%, rgba(26, 54, 88, 0.9) 100%), 
+                url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    padding: 80px 40px;
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+  }
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
+    z-index: 0;
+  }
+
+  .hero-section > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-section h2 {
+    font-size: 3.2em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  }
+
+  .hero-section p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    opacity: 0.9;
+  }
+
+  .hero-section .hero-links a {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+    color: var(--primary-dark);
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  }
+
+  .hero-section .hero-links a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+  }
+
+  .hero-section .hero-links a i {
+    margin-right: 10px;
+  }
+
+  /* Project Card Styling - Tech Cards */
+  section.project {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  section.project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+  }
+
+  section.project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  section.project h2 {
+    color: var(--accent-blue);
+    font-weight: 700;
+    font-size: 1.8em;
+    margin-top: 0;
+    border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  section.project p {
+    margin-bottom: 15px;
+    font-size: 1.05em;
+  }
+
+  section.project p strong {
+    color: var(--accent-blue);
+    font-weight: 600;
+  }
+
+  /* Enhanced Project Images Gallery */
+  section.project .project-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+  }
+
+  section.project .project-images img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  section.project .project-images img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.3);
+  }
+
+  /* TTS Button Styling */
+  .tts-btn {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+    color: var(--primary-dark);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 212, 255, 0.3);
+  }
+
+  .tts-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.5);
+  }
+
+  .tts-btn i {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+  }
+
+  .tts-btn .fa-spin {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Image Modal Styling */
+  .image-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .modal-content {
+    position: relative;
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 8px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s ease-out;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+  }
+
+  @keyframes zoomIn {
+    from { transform: translateY(-50%) scale(0.8); opacity: 0; }
+    to { transform: translateY(-50%) scale(1); opacity: 1; }
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 2001;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .close-modal:hover {
+    color: var(--accent-blue);
+  }
+
+  .modal-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .modal-controls button {
+    background-color: rgba(0, 212, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+  }
+
+  .modal-controls button:hover {
+    background-color: rgba(0, 212, 255, 0.4);
+    transform: scale(1.1);
+  }
+
+  .modal-caption {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.1em;
+    margin-top: 10px;
+  }
+
+  /* Marketplace Styling */
+  section.marketplace {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  section.marketplace::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+  }
+
+  section.marketplace h2 {
+    color: var(--accent-blue);
+    font-weight: 700;
+    font-size: 2.2em;
+    margin-top: 0;
+    border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    padding: 15px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th {
+    background-color: rgba(0, 212, 255, 0.1);
+    color: var(--accent-blue);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95em;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  table tbody tr:hover {
+    background-color: rgba(0, 212, 255, 0.05);
+  }
+
+  .action-btn {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+    color: var(--primary-dark);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 212, 255, 0.3);
+  }
+
+  .action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 212, 255, 0.5);
+  }
+
+  section.marketplace .contact-info-marketplace {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    text-align: center;
+  }
+
+  section.marketplace .contact-info-marketplace p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+
+  section.marketplace .contact-info-marketplace a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  section.marketplace .contact-info-marketplace a:hover {
+    color: var(--white);
+    text-shadow: 0 0 8px var(--accent-blue);
+  }
+
+  section.marketplace .contact-info-marketplace a i {
+    margin-right: 8px;
+  }
+
+  /* AI Assistant Styling */
+  .ai-assistant {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-assistant::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+  }
+
+  .ai-assistant h2 {
+    color: var(--accent-blue);
+    font-weight: 700;
+    font-size: 2.2em;
+    margin-top: 0;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .ai-assistant h2 i {
+    color: var(--accent-blue);
+    margin-right: 10px;
+  }
+
+  .ai-assistant p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+  }
+
+  .ai-assistant textarea {
+    width: 100%;
+    max-width: 600px;
+    min-height: 120px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    resize: vertical;
+  }
+
+  .ai-assistant textarea:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+    outline: none;
+  }
+
+  .ai-assistant-btn {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+    color: var(--primary-dark);
+    padding: 14px 35px;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  }
+
+  .ai-assistant-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+  }
+
+  .ai-assistant-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* Toast notification styling */
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .toast.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .toast.success {
+    background: rgba(0, 255, 136, 0.2);
+    border-left: 4px solid var(--success-color);
+  }
+
+  .toast.error {
+    background: rgba(255, 77, 77, 0.2);
+    border-left: 4px solid var(--error-color);
+  }
+
+  /* Loading indicator */
+  .loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+  }
+
+  /* Footer Styling */
+  footer {
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+    color: var(--light-text);
+    padding: 40px 20px;
+    font-size: 0.9em;
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+  }
+
+  footer .social-links {
+    margin-bottom: 20px;
+  }
+
+  footer .social-links a {
+    color: var(--accent-blue);
+    margin: 0 15px;
+    font-size: 1.8em;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+  }
+
+  footer .social-links a:hover {
+    color: var(--white);
+    transform: translateY(-5px);
+    text-shadow: 0 0 10px var(--accent-blue);
+  }
+
+  footer p {
+    margin: 10px 0 0;
+    opacity: 0.8;
+  }
+
+  /* Tech Badge for Projects */
+  .tech-badge {
+    display: inline-block;
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--accent-blue);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2.2em;
+    }
+    
+    nav {
+      flex-direction: column;
+      padding: 15px 0;
+      background: var(--secondary-dark);
+      backdrop-filter: none;
+    }
+    
+    nav a {
+      margin: 8px 10px;
+      font-size: 1em;
+      padding: 10px 20px;
+    }
+    
+    .hero-section {
+      padding: 50px 20px;
+    }
+    
+    .hero-section h2 {
+      font-size: 2.4em;
+    }
+    
+    .hero-section p {
+      font-size: 1.1em;
+    }
+    
+    .hero-section .hero-links a {
+      padding: 12px 25px;
+      font-size: 0.9em;
+      margin: 5px;
+    }
+    
+    section.project {
+      padding: 25px;
+    }
+    
+    section.project h2 {
+      font-size: 1.6em;
+    }
+    
+    th, td {
+      padding: 12px 8px;
+      font-size: 0.9em;
+    }
+    
+    .action-btn {
+      padding: 8px 15px;
+      font-size: 0.85em;
+    }
+    
+    .ai-assistant h2 {
+      font-size: 1.9em;
+    }
+    
+    .ai-assistant p {
+      font-size: 1em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.9em;
+    }
+    
+    header .contact-info a {
+      font-size: 0.9em;
+      margin: 5px 8px;
+    }
+    
+    .hero-section h2 {
+      font-size: 2em;
+    }
+    
+    .hero-section .hero-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    .hero-section .hero-links a {
+      width: 80%;
+      text-align: center;
+      justify-content: center;
+      margin: 0;
+    }
+    
+    section.project .project-images {
+      grid-template-columns: 1fr;
+    }
+    
+    section.project .project-images img {
+      height: 200px;
+    }
+    
+    section.project h2 {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .tts-btn {
+      margin-left: 0;
+    }
+    
+    /* Responsive table for marketplace */
+    table thead {
+      display: none;
+    }
+    
+    table tr {
+      display: block;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    table td {
+      display: block;
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    table td:last-child {
+      border-bottom: none;
+    }
+    
+    table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      width: 45%;
+      padding-right: 10px;
+      text-align: left;
+      font-weight: 600;
+      color: var(--accent-blue);
+    }
+  }
+</style>
+
+<script>
+  // Toast notification system
+  function showToast(message, type = 'success') {
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+      toast.classList.add('show');
+    }, 100);
+    
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => {
+        document.body.removeChild(toast);
+      }, 300);
+    }, 4000);
+  }
+
+  function showPage(page) {
+    // Hide all pages
+    document.getElementById('projectsPage').style.display = 'none';
+    document.getElementById('marketplacePage').style.display = 'none';
+    
+    // Show the selected page
+    document.getElementById(page + 'Page').style.display = 'block';
+    
+    // Update active class on nav links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.classList.remove('active');
+    });
+    
+    // Add active class to the clicked link
+    const activeLink = document.querySelector(`nav a[onclick*="showPage('${page}')"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
+    
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+    
+    // Update URL without page reload
+    history.pushState(null, null, `#${page}`);
+  }
+  
+  // Function to handle scroll animations
+  function handleScrollAnimations() {
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // Stop observing once visible
+        }
+      });
+    }, {
+      threshold: 0.1 // Trigger when 10% of the element is visible
+    });
+
+    fadeInElements.forEach(el => {
+      observer.observe(el);
+    });
+  }
+
+  // Inquiry Button Functionality
+  function handleAiInquiry() {
+    const problemText = document.getElementById('problem-textarea').value;
+    const inquiryBtn = document.getElementById('ai-inquiry-btn');
+    const originalText = inquiryBtn.innerHTML;
+    
+    if (!problemText.trim()) {
+      showToast('Please describe your challenge before sending', 'error');
+      document.getElementById('problem-textarea').focus();
+      return;
+    }
+    
+    // Show loading state
+    inquiryBtn.innerHTML = '<span class="loading"></span> Sending...';
+    inquiryBtn.disabled = true;
+    
+    const subject = "Enquiry for Solution";
+    const mailtoBody = encodeURIComponent(problemText);
+    const mailtoLink = `mailto:atanu.jana.ece.2023@nist.edu?subject=${encodeURIComponent(subject)}&body=${mailtoBody}`;
+    
+    // Use window.location.href to open the user's default email client
+    setTimeout(() => {
+      window.location.href = mailtoLink;
+      
+      // Reset button after a delay
+      setTimeout(() => {
+        inquiryBtn.innerHTML = originalText;
+        inquiryBtn.disabled = false;
+        document.getElementById('problem-textarea').value = '';
+        showToast('Inquiry sent successfully!');
+      }, 2000);
+    }, 500);
+  }
+
+  // TTS Functionality
+  let currentPlayingTTSButton = null;
+  let audioPlayer = null;
+
+  // Use browser's built-in speech synthesis
+  function callBrowserTTS(text) {
+    return new Promise((resolve) => {
+      // Create a unique audio URL using the text
+      const audioUrl = URL.createObjectURL(new Blob([], { type: 'audio/wav' }));
+      
+      // Use browser's SpeechSynthesis API
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 0.8; // Slower, clearer speech
+        utterance.pitch = 1;
+        utterance.volume = 1;
+        
+        // Use a female voice if available for better clarity
+        const voices = speechSynthesis.getVoices();
+        const femaleVoice = voices.find(voice => 
+          voice.name.includes('Female') || 
+          voice.name.includes('woman') || 
+          voice.name.includes('Samantha')
+        );
+        if (femaleVoice) {
+          utterance.voice = femaleVoice;
+        }
+        
+        utterance.onend = () => {
+          resolve(audioUrl);
+        };
+        
+        speechSynthesis.speak(utterance);
+      } else {
+        // If Speech Synthesis is not supported
+        showToast('Text-to-speech not supported in this browser', 'error');
+        resolve(null);
+      }
+    });
+  }
+
+  // Resets the currently playing button to idle state
+  function resetCurrentTTSButton() {
+    if (currentPlayingTTSButton) {
+      currentPlayingTTSButton.dataset.state = 'idle';
+      currentPlayingTTSButton.querySelector('i').className = 'fas fa-volume-high';
+      currentPlayingTTSButton = null;
+    }
+  }
+
+  // Handles click on any TTS button
+  async function handleTtsClick(event) {
+    const button = event.currentTarget;
+    const currentState = button.dataset.state || 'idle';
+
+    // If another button is playing, stop it
+    if (currentPlayingTTSButton && currentPlayingTTSButton !== button) {
+      if (audioPlayer) audioPlayer.pause();
+      if ('speechSynthesis' in window) speechSynthesis.cancel();
+      resetCurrentTTSButton();
+    }
+
+    if (currentState === 'playing') {
+      // Clicked on the button that is already playing: Stop it
+      if (audioPlayer) audioPlayer.pause();
+      if ('speechSynthesis' in window) speechSynthesis.cancel();
+      resetCurrentTTSButton();
+
+    } else if (currentState === 'idle') {
+      // Clicked on an idle button: Start loading and playing
+      try {
+        // Set loading state
+        button.dataset.state = 'loading';
+        button.querySelector('i').className = 'fas fa-spinner fa-spin';
+
+        // Get text
+        const textId = button.dataset.projectTextId;
+        const textContent = document.getElementById(textId).textContent;
+        
+        // Use browser TTS
+        const audioUrl = await callBrowserTTS(textContent);
+        if (!audioUrl) {
+          throw new Error("Failed to generate audio.");
+        }
+
+        // For browser TTS, we don't need to play through audio element
+        button.dataset.state = 'playing';
+        button.querySelector('i').className = 'fas fa-stop';
+        currentPlayingTTSButton = button;
+
+      } catch (error) {
+        console.error("Failed to play TTS:", error);
+        resetCurrentTTSButton(); // Reset on error
+      }
+    }
+    // If state is 'loading', do nothing (wait)
+  }
+
+  // Image Modal Functionality
+  let currentImageIndex = 0;
+  let currentImageSet = [];
+  
+  function openImageModal(imageSrc, imageAlt, imageSet) {
+    currentImageSet = imageSet;
+    currentImageIndex = imageSet.indexOf(imageSrc);
+    
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const caption = document.getElementById('modalCaption');
+    
+    modal.style.display = 'block';
+    modalImg.src = imageSrc;
+    caption.textContent = imageAlt;
+    
+    // Update navigation buttons
+    updateModalButtons();
+  }
+  
+  function closeImageModal() {
+    document.getElementById('imageModal').style.display = 'none';
+  }
+  
+  function changeImage(direction) {
+    currentImageIndex += direction;
+    
+    // Handle wrap-around
+    if (currentImageIndex < 0) {
+      currentImageIndex = currentImageSet.length - 1;
+    } else if (currentImageIndex >= currentImageSet.length) {
+      currentImageIndex = 0;
+    }
+    
+    const modalImg = document.getElementById('modalImage');
+    modalImg.src = currentImageSet[currentImageIndex];
+    
+    // Update caption if available
+    const caption = document.getElementById('modalCaption');
+    // In a real implementation, you might want to store captions for each image
+    
+    updateModalButtons();
+  }
+  
+  function updateModalButtons() {
+    // In a real implementation, you might disable buttons when at the start/end
+    // For now, we'll keep them always enabled with wrap-around
+  }
+  
+  // Close modal when clicking outside the image
+  window.onclick = function(event) {
+    const modal = document.getElementById('imageModal');
+    if (event.target === modal) {
+      closeImageModal();
+    }
+  }
+  
+  // Keyboard navigation for modal
+  document.addEventListener('keydown', function(event) {
+    const modal = document.getElementById('imageModal');
+    if (modal.style.display === 'block') {
+      if (event.key === 'Escape') {
+        closeImageModal();
+      } else if (event.key === 'ArrowLeft') {
+        changeImage(-1);
+      } else if (event.key === 'ArrowRight') {
+        changeImage(1);
+      }
+    }
+  });
+
+  // Set the default page on load
+  window.onload = () => {
+    // Check URL hash to determine which page to show
+    const hash = window.location.hash.substring(1);
+    if (hash === 'marketplace') {
+      showPage('marketplace');
+    } else {
+      showPage('projects');
+    }
+    
+    handleScrollAnimations(); // Initialize scroll animations
+
+    // Attach listener for AI Inquiry Button
+    const inquiryBtn = document.getElementById('ai-inquiry-btn');
+    if (inquiryBtn) {
+      inquiryBtn.addEventListener('click', handleAiInquiry);
+    }
+
+    // Initialize TTS
+    audioPlayer = document.getElementById('tts-audio-player');
+    if (audioPlayer) {
+      // When audio finishes, reset the button
+      audioPlayer.onended = () => resetCurrentTTSButton();
+    }
+    // Attach listeners for all TTS buttons
+    document.querySelectorAll('.tts-btn').forEach(btn => {
+      btn.addEventListener('click', handleTtsClick);
+    });
+    
+    // Initialize image modal functionality
+    document.querySelectorAll('.project-images img').forEach(img => {
+      // Get all images in the same project
+      const projectImages = Array.from(img.closest('.project-images').querySelectorAll('img')).map(i => i.src);
+      img.addEventListener('click', () => {
+        openImageModal(img.src, img.alt, projectImages);
+      });
+    });
+  };
+</script>
+</head>
+<body>
+
+<!-- Skip link for keyboard navigation -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+  <h1>ATANU JANA</h1>
+  <p>Embedded AI & Machine Intelligence Solutions</p>
+  <div class="contact-info">
+    <a href="mailto:atanu.jana.ece.2023@nist.edu">
+      <i class="fas fa-envelope"></i> atanu.jana.ece.2023@nist.edu
+    </a>
+    <a href="https://www.linkedin.com/in/atanu1108" target="_blank" rel="noopener">
+      <i class="fab fa-linkedin"></i> LinkedIn Profile
+    </a>
+  </div>
+</header>
+
+<nav>
+  <a href="#" onclick="showPage('projects'); return false;">ENGINEERING WORKS</a>
+  <a href="#" onclick="showPage('marketplace'); return false;">SOLUTIONS MARKETPLACE</a>
+</nav>
+
+<main id="main-content">
+
+<!-- ==================================
+     PROJECTS PAGE
+================================== -->
+<section id="projectsPage">
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h2>EMBEDDED INTELLIGENCE SOLUTIONS</h2>
+    <p>Bridging hardware and AI to solve real-world challenges through innovative engineering.</p>
+    <div class="hero-links">
+      <a href="#marketplacePage" onclick="showPage('marketplace'); return false;">
+        <i class="fas fa-microchip"></i> EXPLORE SOLUTIONS
+      </a>
+      <a href="https://www.linkedin.com/in/atanu1108" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i> CONNECT ON LINKEDIN
+      </a>
+    </div>
+  </section>
+
+  <!-- Project 1 -->
+  <section class="project fade-in">
+    <h2>
+      <span>1. IoT-Based Agro-Robot Smart Irrigation System</span>
+      <button class="tts-btn" data-project-text-id="project-text-1" aria-label="Read description aloud"><i class="fas fa-volume-high"></i></button>
+    </h2>
+    <div class="project-images">
+      <img src="./agro1.jpeg" alt="IoT Device in Field">
+      <img src="./agro2.jpeg" alt="Smartphone App UI">
+      <img src="./agro3.jpeg" alt="Soil Moisture Sensor">
+    </div>
+    <div class="project-description" id="project-text-1">
+      <p><strong>Problem:</strong> Manual farming methods lead to excessive labor, inconsistent crop monitoring, and inefficient use of resources such as water, fertilizer, and soil nutrients, resulting in reduced productivity and higher operational costs.</p>
+      <p><strong>Solved Solution:</strong> Developed an IoT-based Smart Agro Robot using ESP32 for autonomous field monitoring and data collection, capable of measuring soil moisture, temperature, pH, and NPK nutrient levels. The system provides real-time data visualization and automated decision support through the Blynk IoT app.</p>
+      <p><strong>Technology:</strong> <span class="tech-badge">ESP32</span> <span class="tech-badge">IoT Sensors</span> <span class="tech-badge">Blynk Cloud</span> <span class="tech-badge">Automation</span></p>
+      <p><strong>Innovation:</strong> Mobile robotic platform enabling real-time, multi-parameter soil and environment analysis with IoT-based remote monitoring and autonomous navigation for smart farming.</p>
+      <p><strong>Market Application:</strong> Precision agriculture, soil health management, crop monitoring, smart farming systems, agri-tech research and education.</p>
+      <p><strong>Commercial Potential:</strong> Scalable solution for farmers, agri-tech companies, and sustainable agriculture initiatives by improving yield prediction and input optimization.</p>
+      <p><strong>Lab Origin:</strong> NI Lab, NIST University, India — Under Dr. Kunjabihari Swain</p>
+    </div>
+  </section>
+
+  <!-- Project 2 -->
+  <section class="project fade-in">
+    <h2>
+      <span>2. Knock Pattern Authentication-Based Smart Door Access System</span>
+      <button class="tts-btn" data-project-text-id="project-text-2" aria-label="Read description aloud"><i class="fas fa-volume-high"></i></button>
+    </h2>
+    <div class="project-images">
+      <img src="./21.jpeg" alt="Smart Door Lock">
+      <img src="./22.jpeg" alt="Piezo Sensor">
+    </div>
+    <div class="project-description" id="project-text-2">
+      <p><strong>Problem:</strong> Biometric and RFID systems are costly, power-hungry, and prone to spoofing.</p>
+      <p><strong>Solved Solution:</strong> Designed a smart access control device that authenticates users based on unique knock-time patterns using a piezo sensor and embedded pattern recognition logic.</p>
+      <p><strong>Technology:</strong> <span class="tech-badge">Piezo-electric Transducer</span> <span class="tech-badge">Microcontroller</span> <span class="tech-badge">Pattern Recognition</span> <span class="tech-badge">Embedded System</span></p>
+      <p><strong>Innovation:</strong> Offline, low-power, multi-user access control with gesture-based authentication.</p>
+      <p><strong>Market Application:</strong> Smart homes, hostels, offices, and IoT security solutions.</p>
+      <p><strong>Commercial Potential:</strong> Medium — can be mass-produced as a low-cost alternative to smart locks.</p>
+      <p><strong>Lab Origin:</strong> Department of ECE, NIST University — Under Dr. Sandipan Mallik</p>
+    </div>
+  </section>
+
+  <!-- Project 3 -->
+  <section class="project fade-in">
+    <h2>
+      <span>3. Intelligent IoT & ML-Based Smart Irrigation Forecasting System</span>
+      <button class="tts-btn" data-project-text-id="project-text-3" aria-label="Read description aloud"><i class="fas fa-volume-high"></i></button>
+    </h2>
+    <div class="project-images">
+      <img src="./31.jpeg" alt="ML Model Graph">
+      <img src="./32.jpeg" alt="Data Forecast Chart">
+      <img src="./33.jpeg" alt="IoT Sensors in Field">
+    </div>
+    <div class="project-description" id="project-text-3">
+      <p><strong>Problem:</strong> Unpredictable weather and soil conditions cause water wastage and poor irrigation planning.</p>
+      <p><strong>Solved Solution:</strong> Developed a predictive irrigation system integrating IoT sensors and ML models (Random Forest, XGBoost, SARIMAX) to forecast soil moisture and optimize water usage.</p>
+      <p><strong>Technology:</strong> <span class="tech-badge">IoT Sensors</span> <span class="tech-badge">Machine Learning</span> <span class="tech-badge">Cloud Analytics</span> <span class="tech-badge">Decision Support System</span></p>
+      <p><strong>Innovation:</strong> Combines IoT and AI for predictive irrigation and precision agriculture decision-making.</p>
+      <p><strong>Market Application:</strong> Agri-tech startups, smart irrigation services, sustainable farming solutions.</p>
+      <p><strong>Commercial Potential:</strong> Very High — scalable SaaS platform for agriculture and water management sectors.</p>
+      <p><strong>Institution:</strong> IISER Berhampur — Under Dr. Anabik Pal</p>
+    </div>
+  </section>
+
+  <!-- Project 4 -->
+  <section class="project fade-in">
+    <h2>
+      <span>4. PORTA-MP — AI/ML-Based Portable Microplastic Detection</span>
+      <button class="tts-btn" data-project-text-id="project-text-4" aria-label="Read description aloud"><i class="fas fa-volume-high"></i></button>
+    </h2>
+    <div class="project-images">
+      <img src="./41.jpeg" alt="Portable Device">
+      <img src="./42.jpeg" alt="Fluorescence Microscope">
+      <img src="./43.jpeg" alt="AI Result Visualization">
+    </div>
+    <div class="project-description" id="project-text-4">
+      <p><strong>Problem:</strong> Laboratory detection of microplastics is expensive, slow, and inaccessible for field monitoring.</p>
+      <p><strong>Solved Solution:</strong> Created a portable AI-driven device using Nile Red staining and UV fluorescence imaging on Raspberry Pi for fast, on-site microplastic detection.</p>
+      <p><strong>Technology:</strong> <span class="tech-badge">Raspberry Pi</span> <span class="tech-badge">AI/ML Image Classification</span> <span class="tech-badge">UV Fluorescence</span> <span class="tech-badge">Embedded Software</span></p>
+      <p><strong>Innovation:</strong> Sub-minute, 100× cheaper portable microplastic analysis system for field deployment.</p>
+      <p><strong>Market Application:</strong> Environmental monitoring, wastewater analysis, ocean cleanup missions, research labs.</p>
+      <p><strong>Commercial Potential:</strong> Very High — strong demand for low-cost environmental testing kits.</p>
+      <p><strong>Lab Origin:</strong> Department of ECE, NIST University — Under Dr. Sandipan Mallik</p>
+    </div>
+  </section>
+
+  <!-- Project 5 -->
+  <section class="project fade-in">
+    <h2>
+      <span>5. Wafer Defect Detection System Using Machine Learning</span>
+      <button class="tts-btn" data-project-text-id="project-text-5" aria-label="Read description aloud"><i class="fas fa-volume-high"></i></button>
+    </h2>
+    <div class="project-images">
+      <img src="./51.jpeg" alt="Semiconductor Wafer">
+      <img src="./52.jpeg" alt="Defect Map Visualization">
+      <img src="./53.jpeg" alt="ML Model Interface">
+    </div>
+    <div class="project-description" id="project-text-5">
+      <p><strong>Problem:</strong> Manual wafer inspection in semiconductor fabrication is time-consuming and prone to errors.</p>
+      <p><strong>Solved Solution:</strong> Built an ML-based solution to detect and classify wafer surface defects using measurement parameters like thickness, bow, warp, and resistivity.</p>
+      <p><strong>Technology:</strong> <span class="tech-badge">Machine Learning</span> <span class="tech-badge">Computer Vision</span> <span class="tech-badge">Semiconductor Analytics</span></p>
+      <p><strong>Innovation:</strong> Automated defect identification improving yield and reducing inspection costs.</p>
+      <p><strong>Market Application:</strong> Semiconductor manufacturing, wafer R&D labs, chip quality control.</p>
+      <p><strong>Commercial Potential:</strong> High — valuable to semiconductor fabs and R&D institutions.</p>
+      <p><strong>Collaborator:</strong> National Taiwan Hsinchu University — In collaboration with V. Someswar Rao</p>
+    </div>
+  </section>
+
+  <!-- Project 6 -->
+  <section class="project fade-in">
+    <h2>
+      <span>6. Excel Row-Column Extractor Software Tool</span>
+      <button class="tts-btn" data-project-text-id="project-text-6" aria-label="Read description aloud"><i class="fas fa-volume-high"></i></button>
+    </h2>
+    <div class="project-images">
+      <img src="./61.jpeg" alt="Code on Screen">
+      <img src="./62.jpeg" alt="Excel Data Sheet">
+    </div>
+    <div class="project-description" id="project-text-6">
+      <p><strong>Problem:</strong> Research labs struggle with manual extraction and organization of experimental data from large Excel sheets.</p>
+      <p><strong>Solved Solution:</strong> Developed a Python-based tool that automatically extracts required rows/columns and restructures data for easy analysis.</p>
+      <p><strong>Technology:</strong> <span class="tech-badge">Python</span> <span class="tech-badge">Pandas</span> <span class="tech-badge">OpenPyXL</span> <span class="tech-badge">GUI Automation</span></p>
+      <p><strong>Innovation:</strong> One-click automated data parsing and export for laboratory test results.</p>
+      <p><strong>Market Application:</strong> Research and testing laboratories, data-intensive R&D facilities.</p>
+      <p><strong>Commercial Potential:</strong> Medium-Low — useful as custom productivity software for labs.</p>
+      <p><strong>Client:</strong> Mr. Sunil K Singh, AIU Modern Research Lab, South Korea</p>
+    </div>
+  </section>
+
+  <!-- Project 7 -->
+  <section class="project fade-in">
+    <h2>
+      <span>7. Reference-to-RIS Converter Software Tool</span>
+      <button class="tts-btn" data-project-text-id="project-text-7" aria-label="Read description aloud"><i class="fas fa-volume-high"></i></button>
+    </h2>
+    <div class="project-images">
+      <img src="./71.jpeg" alt="Citation Management">
+      <img src="./72.jpeg" alt="Research Paper">
+    </div>
+    <div class="project-description" id="project-text-7">
+      <p><strong>Problem:</strong> Researchers spend hours manually formatting references for citation managers and journals.</p>
+      <p><strong>Solved Solution:</strong> Created a Python application that converts written references into .RIS files compatible with Mendeley, EndNote, and Zotero.</p>
+      <p><strong>Technology:</strong> <span class="tech-badge">Python</span> <span class="tech-badge">Text Parsing</span> <span class="tech-badge">Regex</span> <span class="tech-badge">File I/O Automation</span></p>
+      <p><strong>Innovation:</strong> Automates citation formatting, saving up to 90% researcher time.</p>
+      <p><strong>Market Application:</strong> Academic institutions, research labs, journal publishers, citation management software.</p>
+      <p><strong>Commercial Potential:</strong> Medium — potential as a SaaS citation tool or plug-in.</p>
+      <p><strong>Client:</strong> Semiconductor Device Fabrication Research Lab, NIST University, India</p>
+    </div>
+  </section>
+
+  <!-- Project 8 -->
+  <section class="project fade-in">
+    <h2>
+      <span>8. XRD Material Classification Using Machine Learning</span>
+      <button class="tts-btn" data-project-text-id="project-text-8" aria-label="Read description aloud"><i class="fas fa-volume-high"></i></button>
+    </h2>
+    <div class="project-images">
+      <img src="./81.jpeg" alt="XRD Pattern Graph">
+      <img src="./82.jpeg" alt="Material Science Lab">
+    </div>
+    <div class="project-description" id="project-text-8">
+      <p><strong>Problem:</strong> Manual interpretation of X-ray diffraction patterns is slow and prone to human error.</p>
+      <p><strong>Solved Solution:</strong> Developed an ML model to automatically classify XRD patterns and identify crystalline structures and material phases.</p>
+      <p><strong>Technology:</strong> <span class="tech-badge">Machine Learning</span> <span class="tech-badge">Python</span> <span class="tech-badge">Materials Informatics</span> <span class="tech-badge">Pattern Recognition</span></p>
+      <p><strong>Innovation:</strong> Automated, high-accuracy XRD data analysis system for material identification.</p>
+      <p><strong>Market Application:</strong> Material research labs, semiconductor R&D, metallurgy, ceramics industries.</p>
+      <p><strong>Commercial Potential:</strong> High — applicable for industrial R&D and academic research centers.</p>
+      <p><strong>Collaborator:</strong> National Taiwan Hsinchu University, Taiwan — In collaboration with V. Someswar Rao</p>
+    </div>
+  </section>
+
+</section>
+
+<!-- ==================================
+     MARKETPLACE PAGE
+================================== -->
+<section id="marketplacePage" style="display:none;">
+  
+  <!-- AI Solutions Assistant -->
+  <section class="ai-assistant">
+    <h2><i class="fas fa-microchip"></i> NEED A CUSTOM EMBEDDED SOLUTION?</h2>
+    <p>Describe your engineering challenge, and send an inquiry directly for a custom hardware/software solution.</p>
+    <textarea id="problem-textarea" rows="4" placeholder="e.g., 'I need a low-cost way to monitor water quality in remote ponds with real-time IoT connectivity.'"></textarea>
+    <button id="ai-inquiry-btn" class="ai-assistant-btn">
+      <span>SEND ENGINEERING INQUIRY</span>
+    </button>
+  </section>
+  
+  <!-- Marketplace Table -->
+  <section class="marketplace">
+    <h2>EMBEDDED SOLUTIONS MARKETPLACE</h2>
+    <p style="text-align: center; font-size: 1.1em; margin-top: -10px; margin-bottom: 30px;">Hardware, software, and integrated solutions available for purchase or licensing.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Product / Solution</th>
+          <th>Price (INR & USD)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Product">IoT Smart Irrigation System</td>
+          <td data-label="Price">₹5999 (USD 68.20)</td>
+          <td data-label="Action"><a href="mailto:atanu.jana.ece.2023@nist.edu?subject=Inquiry: IoT Smart Irrigation System" class="action-btn">INQUIRE</a></td>
+        </tr>
+        <tr>
+          <td data-label="Product">Knock Pattern Authentication Smart Door System</td>
+          <td data-label="Price">₹1999 (USD 22.73)</td>
+          <td data-label="Action"><a href="mailto:atanu.jana.ece.2023@nist.edu?subject=Inquiry: Knock Pattern Smart Door" class="action-btn">INQUIRE</a></td>
+        </tr>
+        <tr>
+          <td data-label="Product">Intelligent IoT & ML-Based Smart Irrigation Forecasting System</td>
+          <td data-label="Price">₹999 (USD 11.36)</td>
+          <td data-label="Action"><a href="mailto:atanu.jana.ece.2023@nist.edu?subject=Inquiry: ML Smart Irrigation" class="action-btn">INQUIRE</a></td>
+        </tr>
+        <tr>
+          <td data-label="Product">PORTA-MP (AI Microplastic Detection Device)</td>
+          <td data-label="Price">₹15000 (USD 170.66)</td>
+          <td data-label="Action"><a href="mailto:atanu.jana.ece.2023@nist.edu?subject=Inquiry: PORTA-MP" class="action-btn">INQUIRE</a></td>
+        </tr>
+        <tr>
+          <td data-label="Product">Wafer Defect Detection System Using ML</td>
+          <td data-label="Price">₹2500 (USD 28.44)</td>
+          <td data-label="Action"><a href="mailto:atanu.jana.ece.2023@nist.edu?subject=Inquiry: Wafer Defect System" class="action-btn">INQUIRE</a></td>
+        </tr>
+        <tr>
+          <td data-label="Product">Excel Row-Column Extractor Tool</td>
+          <td data-label="Price">₹1500 (USD 17.07)</td>
+          <td data-label="Action"><a href="mailto:atanu.jana.ece.2023@nist.edu?subject=Inquiry: Excel Extractor Tool" class="action-btn">INQUIRE</a></td>
+        </tr>
+        <tr>
+          <td data-label="Product">Reference-to-RIS Converter Tool (desktop)</td>
+          <td data-label="Price">₹999 (USD 11.36)</td>
+          <td data-label="Action"><a href="mailto:atanu.jana.ece.2023@nist.edu?subject=Inquiry: RIS Converter Tool" class="action-btn">INQUIRE</a></td>
+        </tr>
+        <tr>
+          <td data-label="Product">XRD Material Classification Using ML</td>
+          <td data-label="Price">₹2500 (USD 28.44)</td>
+          <td data-label="Action"><a href="mailto:atanu.jana.ece.2023@nist.edu?subject=Inquiry: XRD Classification" class="action-btn">INQUIRE</a></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="contact-info-marketplace">
+      <p>Contact for technical specifications, custom solutions, or commercial inquiries:</p>
+      <a href="mailto:atanu.jana.ece.2023@nist.edu">
+        <i class="fas fa-envelope"></i> atanu.jana.ece.2023@nist.edu
+      </a>
+      <a href="https://www.linkedin.com/in/atanu1108" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i> LinkedIn Profile
+      </a>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<!-- Image Modal -->
+<div id="imageModal" class="image-modal">
+  <span class="close-modal" onclick="closeImageModal()">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <div class="modal-controls">
+    <button onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
+    <button onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="modal-caption" id="modalCaption"></div>
+</div>
+
+<audio id="tts-audio-player" style="display: none;"></audio>
+
+<footer>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/atanu1108" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:atanu.jana.ece.2023@nist.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  </div>
+  <p>&copy; 2025 Atanu Jana. Embedded AI & Machine Intelligence Solutions.</p>
+</footer>
+
+</body>
+</html>
